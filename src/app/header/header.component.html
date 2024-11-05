@@ -1,0 +1,24 @@
+<header>
+
+  <ng-container class="perfil-container" *ngIf="profile">
+
+    <img class="foto" [src]="profile.picture" alt="{{ profile.name }}" />
+    
+    <div class="info">
+
+      <p class="nome"><strong>Nome:</strong> {{ profile.name }}</p>
+      <p class="email"><strong>Email:</strong> {{ profile.email }}</p>
+
+  </div>
+
+  </ng-container>
+
+  <div class="botoes">
+
+    <button *ngIf="!profile" class="btn btn-primary" id="botoes" (click)="login()">Iniciar Sessão</button>
+
+    <button *ngIf="profile" class="btn btn-primary" id="botoes" (click)="logout()">Terminar Sessão</button>
+
+  </div>
+
+</header>

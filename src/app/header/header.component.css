@@ -1,0 +1,62 @@
+header {
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.perfil-container {
+
+    display: flex;
+    align-items: center;
+    flex-grow: 0;
+    
+}
+
+#botoes{
+
+    margin-right: 20px;
+
+}
+
+.foto {
+
+    border-radius: 50%;
+    max-width: 50px;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.info {
+
+    display: flex;
+    flex-direction: column;
+    align-self: left;
+
+}
+
+.nome, .email {
+
+    margin: 0;
+
+}
+
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .perfil-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .info {
+        padding-left: 10px;
+    }
+}

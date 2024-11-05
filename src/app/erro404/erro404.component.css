@@ -1,0 +1,45 @@
+.main {
+    
+    height: 100%;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgb(4, 86, 210), rgb(0, 0, 94), rgb(119, 0, 109)) !important;
+    padding: 20px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.caixa{
+
+    background-color: rgb(255, 255, 255);
+    padding: 5%;
+    margin-top: 25vh;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 50px;
+    justify-content: center;
+    align-self: center;
+
+}
+
+h1{
+    justify-content: left;
+    align-self: center;
+    display: flex;
+    color: rgb(52, 0, 28);
+}
+
+#botão{
+
+    background-color: rgb(165, 0, 165);
+    border-color: rgb(255, 0, 255);
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: 20px;
+
+}
+    

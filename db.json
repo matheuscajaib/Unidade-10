@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice",
+      "email": "alice@exemplo.com"
+    },
+    {
+      "id": "2",
+      "name": "Bob",
+      "email": "bob@exemplo.com"
+    }
+  ],
+  "lista": [
+    {
+      "id": "1",
+      "title": "Planejar reunião semanal",
+      "userId": 2,
+      "included": false
+    },
+    {
+      "id": "2",
+      "title": "Revisar proposta de orçamento",
+      "userId": 1,
+      "included": false
+    },
+    {
+      "id": "3",
+      "title": "Comprar material de escritório",
+      "userId": 2,
+      "included": false
+    },
+    {
+      "id": "4",
+      "title": "Organizar arquivos",
+      "userId": 1,
+      "included": true
+    },
+    {
+      "id": "7ace",
+      "title": "comprar vaso",
+      "included": true,
+      "userId": null
+    }
+  ]
+}
