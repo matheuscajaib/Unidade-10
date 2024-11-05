@@ -1,4 +1,3 @@
-// src/app/services/auth.service.ts
 import { Injectable } from '@angular/core';
 import { AuthService as Auth0Service, User } from '@auth0/auth0-angular';
 import { Observable, of } from 'rxjs';
