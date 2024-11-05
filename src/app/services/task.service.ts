@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +13,15 @@ export class TaskService {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  // Carregar tarefas do usuário autenticado
+  // Carregar listas associadas ao usuário logado
   getUserTasks(): Observable<any[]> {
-    const userId = this.authService.currentUserId;
+    const userId = this.authService.userId;
     return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
   }
 
-  // Adicionar tarefa com base no usuário autenticado
+  // Adicionar uma nova tarefa associada ao `userId` do usuário logado
   addTask(task: Partial<any>): Observable<any> {
-    const userId = this.authService.currentUserId;
+    const userId = this.authService.userId;
     return this.http.post<any>(this.apiUrl, { ...task, userId });
   }
 

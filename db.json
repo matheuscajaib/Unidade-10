@@ -3,44 +3,76 @@
     {
       "id": "1",
       "name": "Alice",
-      "email": "alice@exemplo.com"
+      "email": "alice@exemplo.com",
+      "auth0UserId": "auth0|123456789"
     },
     {
       "id": "2",
       "name": "Bob",
-      "email": "bob@exemplo.com"
+      "email": "bob@exemplo.com",
+      "auth0UserId": "auth0|987654321"
     }
   ],
   "lista": [
     {
       "id": "1",
       "title": "Planejar reunião semanal",
-      "userId": 2,
+      "userId": "auth0|987654321",
       "included": false
     },
     {
       "id": "2",
       "title": "Revisar proposta de orçamento",
-      "userId": 1,
+      "userId": "auth0|123456789",
       "included": false
     },
     {
       "id": "3",
       "title": "Comprar material de escritório",
-      "userId": 2,
-      "included": false
-    },
-    {
-      "id": "4",
-      "title": "Organizar arquivos",
-      "userId": 1,
+      "userId": "auth0|987654321",
       "included": true
     },
     {
-      "id": "7ace",
-      "title": "comprar vaso",
+      "id": "bd3e",
+      "title": "pizza congelada",
       "included": true,
-      "userId": null
+      "userId": "auth0|6727d4c9d311db6751ec7150"
+    },
+    {
+      "id": "77f5",
+      "title": "yogurte de morango",
+      "included": true,
+      "userId": "auth0|6727d4c9d311db6751ec7150"
+    },
+    {
+      "id": "1b7f",
+      "title": "banana",
+      "included": false,
+      "userId": "auth0|6727d4c9d311db6751ec7150"
+    },
+    {
+      "id": "c8b2",
+      "title": "banana da terra",
+      "included": false,
+      "userId": "auth0|672a718333b6326ebd219933"
+    },
+    {
+      "id": "6cd5",
+      "title": "carambola",
+      "included": false,
+      "userId": "auth0|6727d4c9d311db6751ec7150"
+    },
+    {
+      "id": "6d55",
+      "title": "óleo de motor",
+      "included": false,
+      "userId": "auth0|6727d4c9d311db6751ec7150"
+    },
+    {
+      "id": "c9b1",
+      "title": "maionese hellmans",
+      "included": false,
+      "userId": "auth0|672a718333b6326ebd219933"
     }
   ]
 }

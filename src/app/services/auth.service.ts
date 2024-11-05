@@ -1,54 +1,38 @@
 // src/app/services/auth.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
-import { Router } from '@angular/router';
-
-interface User {
-  id: number;
-  name: string;
-  email: string;
-}
+import { AuthService as Auth0Service, User } from '@auth0/auth0-angular';
+import { Observable, of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly apiUrl = 'http://localhost:3000/users';
-  private currentUserSubject = new BehaviorSubject<User | null>(null);
-  public currentUser$ = this.currentUserSubject.asObservable();
+  private currentUserId: string | null = null;
 
-  constructor(private http: HttpClient, private router: Router) {
-    const savedUser = localStorage.getItem('currentUser');
-    if (savedUser) {
-      this.currentUserSubject.next(JSON.parse(savedUser));
-    }
+  constructor(private auth0: Auth0Service) {
+    // Obter e armazenar o `userId` do usuário quando ele logar
+    this.auth0.user$.pipe(
+      tap((user) => {
+        this.currentUserId = user?.sub ?? null; 
+      })
+    ).subscribe();
   }
 
-  login(email: string): Observable<User | null> {
-    return this.http.get<User[]>(`${this.apiUrl}?email=${email}`).pipe(
-      map(users => (users.length ? users[0] : null)),
-      tap(user => {
-        if (user) {
-          this.currentUserSubject.next(user);
-          localStorage.setItem('currentUser', JSON.stringify(user));
-        }
-      })
-    );
+  get isAuthenticated$(): Observable<boolean> {
+    return this.auth0.isAuthenticated$;
+  }
+
+  get userId(): string | null {
+    return this.currentUserId;
+  }
+
+  loginWithRedirect(): void {
+    this.auth0.loginWithRedirect();
   }
 
   logout(): void {
-    this.currentUserSubject.next(null);
-    localStorage.removeItem('currentUser');
-    this.router.navigate(['/login']);
-  }
-
-  isAuthenticated(): boolean {
-    return !!this.currentUserSubject.value;
-  }
-
-  get currentUserId(): number | null {
-    return this.currentUserSubject.value?.id ?? null;
+    this.auth0.logout({ logoutParams: { returnTo: window.location.origin } });
+    this.currentUserId = null;
   }
 }
