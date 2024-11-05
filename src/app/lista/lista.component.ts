@@ -37,7 +37,7 @@ export class ListaComponent implements OnInit {
   // Adicionar uma nova tarefa e enviar para o backend
   naLista(form: NgForm): void {
     const newTask = {
-      title: form.controls['item'].value,
+      title: form.controls['item'].value, // usa o campo 'title'
       included: false
     };
 
