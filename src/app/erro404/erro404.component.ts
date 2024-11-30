@@ -13,7 +13,7 @@ export class Erro404Component {
   constructor(private router: Router) {}
 
   voltar() {
-    this.router.navigate(['/bem-vindo']);
+    this.router.navigate(['/home']);
   }
 
 }

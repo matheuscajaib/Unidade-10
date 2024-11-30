@@ -8,11 +8,11 @@ export const guarda: CanActivateFn = (route, state) => {
   const router = inject(Router);
 
   return auth.isAuthenticated$.pipe(
-    tap(isAuthenticated => {
-      if (!isAuthenticated) {
-        auth.loginWithRedirect(); // Redireciona para a página de login do Auth0 automaticamente
-      }
-    }),
+    //tap(isAuthenticated => {
+    //  if (!isAuthenticated) {
+     //   auth.loginWithRedirect(); // Redireciona para a página de login do /Auth0 automaticamente
+    //  }
+   // }),
     map(isAuthenticated => isAuthenticated)
   );
 };
