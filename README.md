@@ -12,4 +12,4 @@ Para inicializar o banco de dados: rode `json-server --watch db.json --port 3000
 
 ## Explicação das rotas:
 
-O projeto possui a rota padrão de bem vindo com o login via Auth0, após isso redirecionando para a lista de compras protegida via Auth0 para cada usuário e uma tela de erro 404.
+O projeto possui o login via Auth0, mas também há a opção de utilizar sem login.
